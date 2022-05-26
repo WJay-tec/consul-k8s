@@ -64,6 +64,8 @@ type Handler struct {
 	// If not set, will use HTTP.
 	ConsulCACert string
 
+	ConsulAddress string
+
 	// ConsulPartition is the name of the Admin Partition that the controller
 	// is deployed in. It is an enterprise feature requiring Consul Enterprise 1.11+.
 	// Its value is an empty string if partitions aren't enabled.
@@ -160,7 +162,7 @@ type Handler struct {
 	LogLevel string
 	LogJSON  bool
 
-	decoder *admission.Decoder
+	decoder       *admission.Decoder
 }
 type multiPortInfo struct {
 	serviceIndex int
